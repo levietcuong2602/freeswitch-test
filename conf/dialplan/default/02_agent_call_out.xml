@@ -1,0 +1,7 @@
+<include>
+    <extension name="Test_Extension_Agent_Call_Out">
+      <condition field="destination_number" expression="^[a-zA-Z0-9]{1,6}_[0-9]{4,6}$">
+        <action application="lua" data="src/lua/outbound/agent_call_out.lua"/>
+      </condition>
+    </extension>
+</include>

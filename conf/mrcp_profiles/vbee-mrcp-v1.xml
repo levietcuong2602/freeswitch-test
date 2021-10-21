@@ -1,0 +1,18 @@
+<include>
+ <profile name="vbeemrcp" version="1">
+   <param name="server-ip" value="43.239.223.46"/>
+   <param name="server-port" value="1554"/>
+   <param name="resource-location" value=""/>
+	<param name="speechsynth" value="speechsynthesizer"/>
+	<param name="speechrecog" value="speechrecognizer"/>
+   <param name="rtp-ip" value="43.239.223.38"/>
+   <param name="rtp-port-min" value="5000"/>
+   <param name="rtp-port-max" value="6000"/>
+   <param name="codecs" value="PCMU PCMA"/>
+   <synthparams>
+   </synthparams>
+   <recogparams>
+       <param name="start-input-timers" value="false"/>
+   </recogparams>
+ </profile>
+</include>

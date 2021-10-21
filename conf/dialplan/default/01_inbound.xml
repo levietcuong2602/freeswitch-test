@@ -1,0 +1,19 @@
+<include>
+    <extension name="Test_Extension">
+      <condition field="destination_number" expression="^(20000|20001|20006)$">
+        <action application="set" data="continue_on_fail=false"/>
+        <action application="lua" data="src/lua/inbound/inbound_ivr_test.lua"/>
+      </condition>
+    </extension>
+
+    <!-- nghe nen cuoc goi chuc nang danh cho quan ly -->
+    <extension name="test_eavesdrop">
+      <condition field="destination_number" expression="^1900([a-zA-Z0-9_-]+)$">
+        <action application="set" data="hangup_after_bridge=true"/>
+        <action application="set" data="continue_on_fail=true"/>
+        <action application="answer"/>
+        <action application="lua" data="src/lua/general/eavesdrop_call.lua $1"/>
+        <action application="hangup"/>
+      </condition>
+    </extension>
+</include>

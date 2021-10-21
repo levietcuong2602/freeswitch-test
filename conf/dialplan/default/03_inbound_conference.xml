@@ -1,0 +1,7 @@
+<include>
+    <extension name="Test_Extension">
+      <condition field="destination_number" expression="^(20002|20003)$">
+        <action application="lua" data="src/lua/inbound/inbound_conference.lua"/>
+      </condition>
+    </extension>
+</include>

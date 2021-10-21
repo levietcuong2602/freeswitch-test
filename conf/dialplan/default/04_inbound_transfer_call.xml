@@ -1,0 +1,11 @@
+<!-- Dial local extensions -->
+<include>
+    <extension name="Test_transfer_call">
+        <condition field="destination_number" expression="^(20007)$">
+            <action application="bind_meta_app" data="1 b s execute_extension::dx XML features"/>
+	        <action application="set" data="ringback=${us-ring}"/>
+            <action application="bridge" data="user/${destination_number}@${domain_name}"/>
+            <action application="answer"/>
+        </condition>
+    </extension>
+</include>
